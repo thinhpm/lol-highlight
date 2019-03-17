@@ -197,7 +197,7 @@ def download_video_from_youtube(id_video, stt_id):
         return False
 
     print("Downloading...")
-    url = "youtube-dl -f " + str(number) + " -o " + str(stt_id) + "/input/input.%(ext)s https://www.youtube.com/watch?v=" + str(id_video)
+    url = "youtube-dl -f " + str(number) + " -o '" + str(stt_id) + "/input/input.%(ext)s' https://www.youtube.com/watch?v=" + str(id_video)
     print(url)
     os.system(url)
 
