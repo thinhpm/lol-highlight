@@ -1,0 +1,1 @@
+ffmpeg -i "concat:temp/intro.ts|input.mp4|temp/outro.ts" -c copy -bsf:a aac_adtstoasc output.mp4
