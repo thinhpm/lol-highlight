@@ -247,6 +247,7 @@ def get_list_video(channel_id, length_cut, stt_id):
             break
         a = item.find("a")
         title = a.get('title') + ' - LOL Highlight'
+        title = remove_special_characters(title)
         description = title
 
         id_video = a.get('href').replace("/watch?v=", "")
@@ -280,6 +281,15 @@ def get_source_links(stt_id):
         arr_website_avail.append(line.replace('\n', ''))
     fo.close()
     return arr_website_avail
+
+
+def remove_special_characters(string):
+    string = string.replace('\r', '')
+    string = string.replace(' : ', '-')
+    string = string.replace(' ', '-')
+    string = string.replace('.', '-')
+
+    return re.sub(r'[^a-zA-Z0-9-\n\.]', '', string)
 
 
 def get_number_video(url):
