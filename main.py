@@ -233,7 +233,7 @@ def update_max_video(stt_id):
 
 def get_list_video(channel_id, length_cut, stt_id):
     print("Get list video..")
-    max_result = 5
+    max_result = 30
 
     url = "https://www.youtube.com/channel/" + str(channel_id) + "/videos"
 
