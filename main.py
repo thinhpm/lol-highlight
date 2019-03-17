@@ -254,6 +254,7 @@ def get_list_video(channel_id, length_cut, stt_id):
 
         if check_exist_chapt(channel_id, id_video, stt_id):
             tags = get_tags(id_video)
+            tags = ''
             check = False
             has_video = download_video_from_youtube(id_video, stt_id)
 
