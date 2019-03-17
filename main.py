@@ -294,7 +294,7 @@ def remove_special_characters(string):
     string = string.replace('\r', '')
     string = string.replace('[', '')
     string = string.replace(']', '')
-    # string = string.replace('|', '')
+    string = string.replace('|', '')
 
     return string
 
