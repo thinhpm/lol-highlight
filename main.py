@@ -172,8 +172,8 @@ def hanlde(name_title, description, genres, stt_id, length_cut):
     if file_name:
         print("Uploading...")
         #isFirstUpload(stt_id)
-        if isFirstUpload(stt_id):
-            os.system('youtube-upload --title="' + str(
+        if True:
+            os.system('py youtube-upload --title="' + str(
                 name_title) + '" --description="' + description + '" --tags="' + genres +
                       '" --playlist="' + str(playlist) + '" --client-secrets="client_secrets.json" --credentials-file="'
                       + str(stt_id) + '/credentials.json" ' + str(file_name))
@@ -197,7 +197,7 @@ def download_video_from_youtube(id_video, stt_id):
         return False
 
     print("Downloading...")
-    url = "youtube-dl -f " + str(number) + " -o '" + str(stt_id) + "/input/input.%(ext)s' https://www.youtube.com/watch?v=" + str(id_video)
+    url = "youtube-dl -f " + str(number) + " -o " + str(stt_id) + "/input/input.%(ext)s https://www.youtube.com/watch?v=" + str(id_video)
     print(url)
     os.system(url)
 
