@@ -95,7 +95,7 @@ def get_file_upload(stt_id):
     filelist = os.listdir(str(stt_id) + '/input')
 
     for fichier in filelist:
-        if "input" in fichier:
+        if "input.mp4" in fichier:
             return fichier
 
     return False
@@ -284,12 +284,17 @@ def get_source_links(stt_id):
 
 
 def remove_special_characters(string):
+    # string = string.replace('\r', '')
+    # string = string.replace(' : ', '-')
+    # string = string.replace(' ', '-')
+    # string = string.replace('.', '-')
+    #
+    # return re.sub(r'[^a-zA-Z0-9-\n\.]', '', string)
     string = string.replace('\r', '')
-    string = string.replace(' : ', '-')
-    string = string.replace(' ', '-')
-    string = string.replace('.', '-')
+    string = string.replace('[', '')
+    string = string.replace(']', '')
 
-    return re.sub(r'[^a-zA-Z0-9-\n\.]', '', string)
+    return string
 
 
 def get_number_video(url):
