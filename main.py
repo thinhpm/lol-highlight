@@ -172,7 +172,7 @@ def hanlde(name_title, description, genres, stt_id, length_cut):
     if file_name:
         print("Uploading...")
         #isFirstUpload(stt_id)
-        if True:
+        if isFirstUpload(stt_id):
             os.system('youtube-upload --title="' + str(
                 name_title) + '" --description="' + description + '" --tags="' + genres +
                       '" --playlist="' + str(playlist) + '" --client-secrets="client_secrets.json" --credentials-file="'
